@@ -42,7 +42,20 @@ public class Main {
 		List<Integer> list = Arrays.asList(10,1,11,1,2,3,4,5,5);
 		System.out.println(p1.removeDuplicate1(list));
 		
+		
+		int[] array1 = {0, 1, 1, 2, 3, 5, 6, 0, 0, 1};
+		int[] newArray = p1.removeDuplicate1(array1);
+		for(int i:newArray) {
+			System.out.println(i);
+		}
+		
+		
+		
+		String str1 = "ssaaddrrrttyydsfdsds";
+		System.out.println(p1.removeDuplicateChar(str1));
 	}
+	
+	
 
 
 	

@@ -1,13 +1,16 @@
 package Problems;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Problemss {
 
@@ -150,14 +153,14 @@ public class Problemss {
 		}
 		return set;
 	}
-	
-	//Remove duplicate from List
-	public Set<Integer> removeDuplicate1(List<Integer> list1){
-		
+
+	// Remove duplicate from List
+	public Set<Integer> removeDuplicate1(List<Integer> list1) {
+
 		Set<Integer> set = new HashSet<>(list1);
-		
+
 		Set<Integer> set1 = new TreeSet<Integer>(list1);
- 		return set1;		
+		return set1;
 	}
 
 	// Find the element which is more than 2
@@ -193,6 +196,54 @@ public class Problemss {
 			}
 		}
 		return null;
+	}
+
+	// Remove Duplicate from the Array and print the array
+
+	public int[] removeDuplicate1(int[] array) {
+
+		int length = array.length;
+		int[] newArray = new int[length];
+		int currentIndex = 0;
+
+		for (int i = 0; i < length; i++) {
+			boolean isDuplicate = false;
+			for (int j = 0; j < currentIndex; j++) {
+				if (array[i] == array[j]) {
+					isDuplicate = true;
+					break;
+				}
+			}
+
+			if (!isDuplicate) {
+				newArray[currentIndex++] = array[i];
+
+			}
+		}
+		return Arrays.copyOf(newArray, currentIndex);
+	}
+
+// Remove the duplicate character from String
+	public String removeDuplicateChar(String str) {
+
+		Map<Character, Integer> strMap = new ConcurrentHashMap<Character, Integer>();
+
+		for (char chr : str.toCharArray()) {
+			strMap.put(chr, strMap.getOrDefault(chr, 0) + 1);
+		}
+
+		/*
+		 * for(Map.Entry<Character, Integer> entry:strMap.entrySet()) {
+		 * if(entry.getValue()>1) { strMap.remove(entry.getKey()); } }
+		 */
+
+		StringBuilder stringBuilder = new StringBuilder();
+		for (Character ch : str.toCharArray()) {
+			if (strMap.get(ch) == 1) {
+				stringBuilder.append(ch);
+			}
+		}
+		return stringBuilder.toString();
 	}
 
 }
