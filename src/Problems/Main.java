@@ -44,15 +44,23 @@ public class Main {
 		
 		
 		int[] array1 = {0, 1, 1, 2, 3, 5, 6, 0, 0, 1};
-		int[] newArray = p1.removeDuplicate1(array1);
-		for(int i:newArray) {
-			System.out.println(i);
-		}
+		/*
+		 * int[] newArray = p1.removeDuplicate1(array1); for(int i:newArray) {
+		 * System.out.println(i); }
+		 */
 		
 		
 		
 		String str1 = "ssaaddrrrttyydsfdsds";
-		System.out.println(p1.removeDuplicateChar(str1));
+		//System.out.println(p1.removeDuplicateChar(str1));
+		
+		Integer[] newArray1 = p1.removeDuplicate2(array1);
+		
+		for(Integer i: newArray1) {
+			System.out.println(i);
+		}
+		
+		
 	}
 	
 	

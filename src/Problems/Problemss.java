@@ -1,5 +1,6 @@
 package Problems;
 
+import java.lang.annotation.Retention;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -198,8 +199,7 @@ public class Problemss {
 		return null;
 	}
 
-	// Remove Duplicate from the Array and print the array
-
+	// Remove Duplicate from the Array and print the array using for Loop
 	public int[] removeDuplicate1(int[] array) {
 
 		int length = array.length;
@@ -244,6 +244,28 @@ public class Problemss {
 			}
 		}
 		return stringBuilder.toString();
+	}
+
+	// Remove duplicate from array using HashMap
+	public Integer[] removeDuplicate2(int[] arr) {
+
+		Map<Integer, Integer> mapData = new HashMap<>();
+
+		for (int i : arr) {
+			mapData.put(i, mapData.getOrDefault(i, 0) + 1);
+		}
+
+		List<Integer> newList = new ArrayList<>();
+
+		for (int arr1 : arr) {
+
+			if (mapData.get(arr1) == 1) {
+				newList.add(arr1);
+			}
+		}
+
+		Integer[] newArray = newList.toArray(new Integer[newList.size()]);
+		return newArray;
 	}
 
 }
