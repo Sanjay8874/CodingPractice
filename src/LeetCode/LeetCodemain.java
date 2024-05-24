@@ -13,8 +13,12 @@ public class LeetCodemain {
 		
 		String[] strings = {"d","b","c","b","c","a"};
 		int k=2;
-		System.out.println(Solutions.kthDistinct(strings, k));
-	
+		//System.out.println(Solutions.kthDistinct(strings, k));
+		
+		String s1= "   fly me   to   the moon  ";
+		
+		System.out.println(Solutions.lengthOfLastWord(s1));
+		
 	
 	}
 

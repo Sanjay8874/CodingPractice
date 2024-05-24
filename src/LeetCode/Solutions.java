@@ -35,56 +35,70 @@ public class Solutions {
 	}
 
 	public static int findPermutationDifference(String s, String t) {
-		
+
 		String[] s1 = s.split("");
 		String[] t1 = t.split("");
-		
+
 		int l1 = s1.length;
 		int l2 = t1.length;
 		int sum = 0;
-		
-		for(int i=0;i<l1;i++) {
-			for(int j=0;j<l2;j++) {
-				if(s1[i].equals(t1[j])) {
-					sum = Math.abs(sum + Math.abs(i-j));
-					
-					
+
+		for (int i = 0; i < l1; i++) {
+			for (int j = 0; j < l2; j++) {
+				if (s1[i].equals(t1[j])) {
+					sum = Math.abs(sum + Math.abs(i - j));
+
 				}
-				
+
 			}
 		}
-		
+
 		return sum;
 	}
-	
-	
-	
-	 //2053. Kth Distinct String in an Array
-	 public static String kthDistinct(String[] arr, int k) {
-		 
-		 Map<String, Integer> mapStr = new HashMap<String, Integer>();
-		 
-		 for(String str : arr) {
-			 
-			 mapStr.put(str, mapStr.getOrDefault(str, 0)+1);
-			 
-		 }
-		 
-	
-		 List<String> list = new ArrayList<String>();
-		 
-		 for(String s : arr) {
-			 if(mapStr.get(s)==1) {
-				 list.add(s);
-			 }	
-		 }
-		 if(k>list.size()) {
-			 return "";
-		 }
-		 else {
-			return list.get(k-1);
+
+	// 2053. Kth Distinct String in an Array
+	public static String kthDistinct(String[] arr, int k) {
+
+		Map<String, Integer> mapStr = new HashMap<String, Integer>();
+
+		for (String str : arr) {
+
+			mapStr.put(str, mapStr.getOrDefault(str, 0) + 1);
+
 		}
-	        
-	      
-	    }
+
+		List<String> list = new ArrayList<String>();
+
+		for (String s : arr) {
+			if (mapStr.get(s) == 1) {
+				list.add(s);
+			}
+		}
+		if (k > list.size()) {
+			return "";
+		} else {
+			return list.get(k - 1);
+		}
+
+	}
+
+	public static int lengthOfLastWord(String s) {
+
+		char[] chr = s.toCharArray();
+
+		int l = chr.length;
+		int length = 0;
+
+		for (int i = l - 1; i >= 0; i--) {
+
+			if (chr[l - 1] == ' ' || chr[i] == ' ') {
+				length = Math.abs(l - i - 1);
+				break;
+
+			}
+
+		}
+		return length;
+	}
+
 }

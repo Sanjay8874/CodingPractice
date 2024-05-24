@@ -10,6 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -266,6 +267,30 @@ public class Problemss {
 
 		Integer[] newArray = newList.toArray(new Integer[newList.size()]);
 		return newArray;
+	}
+	
+	
+	
+	// Check give String valid or not , in small brackets
+	public boolean checkValidString(String str) {
+		
+		Stack<Character> stack = new Stack();
+		for(char ch : str.toCharArray()) {
+			if(ch=='(') {
+				stack.push(ch);
+			}
+			else if (ch == ')') {
+				if (stack.isEmpty()) {
+					return false;
+					
+				}
+				
+				stack.pop();
+			}
+			
+		}
+		
+		return stack.isEmpty();
 	}
 
 }

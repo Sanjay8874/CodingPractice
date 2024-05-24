@@ -58,10 +58,16 @@ public class Main {
 		
 		for(Integer i: newArray1) {
 			System.out.println(i);
-		}
+		}	
 		
 		
+		String string2 = "((ABC)DE)";
+		System.out.println(p1.checkValidString(string2));
 	}
+	
+	
+	
+	
 	
 	
 
