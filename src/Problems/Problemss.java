@@ -14,6 +14,8 @@ import java.util.Stack;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 
+import javax.sql.rowset.JoinRowSet;
+
 public class Problemss {
 
 	public static void fabbo(int n) {
@@ -271,7 +273,7 @@ public class Problemss {
 	
 	
 	
-	// Check give String valid or not , in small brackets
+	// check Expression is valid or not
 	public boolean checkValidString(String str) {
 		
 		Stack<Character> stack = new Stack();
@@ -292,5 +294,24 @@ public class Problemss {
 		
 		return stack.isEmpty();
 	}
+	
+	// Find Large element in array
+	
+	public int secondLarge(int[] arr) {
+		
+		int max = arr[0];
+		
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i]>max) {
+				
+				max=arr[i];
+			}
+		}
+		
+		return max;
+			
+	}
+	
+	
 
 }

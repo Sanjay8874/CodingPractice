@@ -2,11 +2,9 @@ package LeetCode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.border.MatteBorder;
 
 public class Solutions {
 	public int[] productExceptSelf(int[] nums) {
@@ -100,5 +98,46 @@ public class Solutions {
 		}
 		return length;
 	}
+	
+	
+	//189. Rotate Array
+	
+    public static void rotate(int[] nums, int k) {
+    	
+    	int l = nums.length;
+    	
+    	//1. Reverse Entire array
+    	reverse(nums, 0, l-1);
+    	
+    	//2. Reverse first k element in array
+    	
+    	reverse(nums, 0, k-1);
+    	
+    	// 3. Reverse from k to n-1
+    	
+    	reverse(nums, k, l-1);
+    	      
+    }
+    
+    
+   // Reverse array
+    
+    public static void reverse(int[] arr, int start, int end) {
+    	
+    	while(start<end) {
+    		int temp = arr[start];
+    		arr[start] = arr[end];
+    		arr[end] = temp;	
+    		start++;
+    		end--;
+    	}
+    }
+    
+    public int[] reverse1(int[] array, int start, int end) {
+    	
+    	for(int )
+		return array;
+    	
+    }
 
 }

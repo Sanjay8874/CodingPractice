@@ -1,4 +1,6 @@
 package LeetCode;
+import java.util.Arrays;
+
 import LeetCode.Solutions;
 
 public class LeetCodemain {
@@ -17,8 +19,15 @@ public class LeetCodemain {
 		
 		String s1= "   fly me   to   the moon  ";
 		
-		System.out.println(Solutions.lengthOfLastWord(s1));
+		//System.out.println(Solutions.lengthOfLastWord(s1));
 		
+	
+		
+		int[] arr1 = {1,2,3,4,5,6,7,8};
+		
+		Solutions.rotate(arr1, 2);
+
+		System.out.println(" Rotate Array", + Arrays.toString(arr1));
 	
 	}
 

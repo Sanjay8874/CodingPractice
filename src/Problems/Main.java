@@ -56,13 +56,19 @@ public class Main {
 		
 		Integer[] newArray1 = p1.removeDuplicate2(array1);
 		
-		for(Integer i: newArray1) {
-			System.out.println(i);
-		}	
+		/*
+		 * for(Integer i: newArray1) { System.out.println(i); }
+		 */
 		
 		
 		String string2 = "((ABC)DE)";
-		System.out.println(p1.checkValidString(string2));
+		//System.out.println(p1.checkValidString(string2));
+		
+		
+		
+		int[] arr12 = {20,3,2,3,2,2,2,1,100};
+		System.out.println(p1.secondLarge(arr12));
+		
 	}
 	
 	
