@@ -101,7 +101,6 @@ public class Solutions {
 	
 	
 	//189. Rotate Array
-	
     public static void rotate(int[] nums, int k) {
     	
     	int l = nums.length;
@@ -119,7 +118,6 @@ public class Solutions {
     	      
     }
     
-    
    // Reverse array
     
     public static void reverse(int[] arr, int start, int end) {
@@ -133,11 +131,21 @@ public class Solutions {
     	}
     }
     
-    public int[] reverse1(int[] array, int start, int end) {
+    //2011. Final Value of Variable After Performing Operations
+    public static int finalValueAfterOperations(String[] operations) {
     	
-    	for(int )
-		return array;
-    	
+    	int X=0;
+        for(String str: operations){
+            if(str.equals("X++") || str.equals("++X")) {
+            	X+=1;
+            }
+            else if(str.equals("X--") || str.equals("--X")) {
+            	X-=1;
+			}
+
+        }
+        
+        return X;
     }
 
 }

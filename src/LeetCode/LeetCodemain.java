@@ -27,7 +27,9 @@ public class LeetCodemain {
 		
 		Solutions.rotate(arr1, 2);
 
-		System.out.println(" Rotate Array", + Arrays.toString(arr1));
+		String[] operations = {"X++","++X","--X","X--"};
+		
+		System.out.println(Solutions.finalValueAfterOperations(operations));
 	
 	}
 

@@ -296,7 +296,6 @@ public class Problemss {
 	}
 	
 	// Find Large element in array
-	
 	public int secondLarge(int[] arr) {
 		
 		int max = arr[0];
