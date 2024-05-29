@@ -67,8 +67,10 @@ public class Main {
 		
 		
 		int[] arr12 = {20,3,2,3,2,2,2,1,100};
-		System.out.println(p1.secondLarge(arr12));
+		//System.out.println(p1.secondLarge(arr12));
 		
+		String str22 = "heloo";
+		System.out.println(p1.reverseString(str22));
 	}
 	
 	

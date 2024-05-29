@@ -251,17 +251,12 @@ public class Problemss {
 
 	// Remove duplicate from array using HashMap
 	public Integer[] removeDuplicate2(int[] arr) {
-
 		Map<Integer, Integer> mapData = new HashMap<>();
-
 		for (int i : arr) {
 			mapData.put(i, mapData.getOrDefault(i, 0) + 1);
 		}
-
 		List<Integer> newList = new ArrayList<>();
-
 		for (int arr1 : arr) {
-
 			if (mapData.get(arr1) == 1) {
 				newList.add(arr1);
 			}
@@ -270,47 +265,54 @@ public class Problemss {
 		Integer[] newArray = newList.toArray(new Integer[newList.size()]);
 		return newArray;
 	}
-	
-	
-	
+
 	// check Expression is valid or not
 	public boolean checkValidString(String str) {
-		
+
 		Stack<Character> stack = new Stack();
-		for(char ch : str.toCharArray()) {
-			if(ch=='(') {
+		for (char ch : str.toCharArray()) {
+			if (ch == '(') {
 				stack.push(ch);
-			}
-			else if (ch == ')') {
+			} else if (ch == ')') {
 				if (stack.isEmpty()) {
 					return false;
-					
+
 				}
-				
+
 				stack.pop();
 			}
-			
+
 		}
-		
+
 		return stack.isEmpty();
 	}
-	
+
 	// Find Large element in array
 	public int secondLarge(int[] arr) {
-		
+
 		int max = arr[0];
-		
-		for(int i=0;i<arr.length;i++) {
-			if(arr[i]>max) {
-				
-				max=arr[i];
+
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > max) {
+
+				max = arr[i];
 			}
 		}
-		
-		return max;
-			
-	}
-	
-	
 
+		return max;
+
+	}
+
+	// Reverse String
+	public String reverseString(String str) {
+
+		StringBuilder stringBuilder = new StringBuilder(str);
+		StringBuilder reverseBuilder = stringBuilder.reverse();
+		return reverseBuilder.toString();
+	}
+
+	
+	
+	
+	
 }

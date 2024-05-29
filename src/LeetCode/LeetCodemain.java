@@ -1,7 +1,4 @@
 package LeetCode;
-import java.util.Arrays;
-
-import LeetCode.Solutions;
 
 public class LeetCodemain {
 
