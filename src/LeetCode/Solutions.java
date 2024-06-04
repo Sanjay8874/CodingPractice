@@ -2,9 +2,11 @@ package LeetCode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Solutions {
 	public int[] productExceptSelf(int[] nums) {
@@ -98,54 +100,99 @@ public class Solutions {
 		}
 		return length;
 	}
-	
-	
-	//189. Rotate Array
-    public static void rotate(int[] nums, int k) {
-    	
-    	int l = nums.length;
-    	
-    	//1. Reverse Entire array
-    	reverse(nums, 0, l-1);
-    	
-    	//2. Reverse first k element in array
-    	
-    	reverse(nums, 0, k-1);
-    	
-    	// 3. Reverse from k to n-1
-    	
-    	reverse(nums, k, l-1);
-    	      
-    }
-    
-   // Reverse array
-    
-    public static void reverse(int[] arr, int start, int end) {
-    	
-    	while(start<end) {
-    		int temp = arr[start];
-    		arr[start] = arr[end];
-    		arr[end] = temp;	
-    		start++;
-    		end--;
-    	}
-    }
-    
-    //2011. Final Value of Variable After Performing Operations
-    public static int finalValueAfterOperations(String[] operations) {
-    	
-    	int X=0;
-        for(String str: operations){
-            if(str.equals("X++") || str.equals("++X")) {
-            	X+=1;
-            }
-            else if(str.equals("X--") || str.equals("--X")) {
-            	X-=1;
+
+	// 189. Rotate Array
+	public static void rotate(int[] nums, int k) {
+
+		int l = nums.length;
+
+		// 1. Reverse Entire array
+		reverse(nums, 0, l - 1);
+
+		// 2. Reverse first k element in array
+
+		reverse(nums, 0, k - 1);
+
+		// 3. Reverse from k to n-1
+
+		reverse(nums, k, l - 1);
+
+	}
+
+	// Reverse array
+
+	public static void reverse(int[] arr, int start, int end) {
+
+		while (start < end) {
+			int temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
+			start++;
+			end--;
+		}
+	}
+
+	// 2011. Final Value of Variable After Performing Operations
+	public static int finalValueAfterOperations(String[] operations) {
+
+		int X = 0;
+		for (String str : operations) {
+			if (str.equals("X++") || str.equals("++X")) {
+				X += 1;
+			} else if (str.equals("X--") || str.equals("--X")) {
+				X -= 1;
 			}
 
+		}
+
+		return X;
+	}
+
+	// 3. Longest Substring Without Repeating Characters
+	public int lengthOfLongestSubstring(String s) {
+		
+		List<String> listSubStrings = Solutions.findAllSubstrings(s);
+		TreeSet<Integer> legthSet1 = new TreeSet();		
+		
+		for(String s1: listSubStrings) {
+			int length = s.length();
+			legthSet1.add(length);			
+		}
+		
+		for(String string : listSubStrings) {
+			boolean repChar = Solutions.repChar(string);			
+			if(repChar==false && string.length()>=legthSet1.last()) {
+				return  legthSet1.last();
+			}
+		}
+		
+		legthSet1.last();
+
+	}
+	
+	//Check repeted Char in String
+	
+	public static boolean repChar(String str) {
+		 Set<Character> seenCharacters = new HashSet();
+		for(char ch: str.toCharArray()) {
+			if(!seenCharacters.add(ch)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	//Find allsubString 
+    public static List<String> findAllSubstrings(String str) {
+        List<String> substrings = new ArrayList<>();   
+        // Loop to generate all possible substrings
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i + 1; j <= str.length(); j++) {
+                substrings.add(str.substring(i, j));
+            }
         }
         
-        return X;
+        return substrings;
     }
 
 }
