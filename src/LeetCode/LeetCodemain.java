@@ -27,8 +27,14 @@ public class LeetCodemain {
 		String[] operations = {"X++","++X","--X","X--"};
 		
 		System.out.println(Solutions.finalValueAfterOperations(operations));
+		
+		
+		int[] arr11 = {1,2,3,1,1,3};
+		int re = Solutions.numIdenticalPairs(arr11);
+		
 	
 	}
+	
 
 }
 
