@@ -3,6 +3,7 @@ package LeetCode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -150,68 +151,118 @@ public class Solutions {
 
 	// 3. Longest Substring Without Repeating Characters
 	public int lengthOfLongestSubstring(String s) {
-		
+
 		List<String> listSubStrings = Solutions.findAllSubstrings(s);
-		TreeSet<Integer> legthSet1 = new TreeSet();		
-		
-		for(String s1: listSubStrings) {
+		TreeSet<Integer> legthSet1 = new TreeSet();
+
+		for (String s1 : listSubStrings) {
 			int length = s.length();
-			legthSet1.add(length);			
+			legthSet1.add(length);
 		}
-		
-		for(String string : listSubStrings) {
-			boolean repChar = Solutions.repChar(string);			
-			if(repChar==false && string.length()>=legthSet1.last()) {
-				return  legthSet1.last();
+
+		for (String string : listSubStrings) {
+			boolean repChar = Solutions.repChar(string);
+			if (repChar == false && string.length() >= legthSet1.last()) {
+				return legthSet1.last();
 			}
 		}
-		
+
 		return legthSet1.last();
 
 	}
-	
-	//Check repeted Char in String
-	
+
+	// Check repeted Char in String
+
 	public static boolean repChar(String str) {
-		 Set<Character> seenCharacters = new HashSet();
-		for(char ch: str.toCharArray()) {
-			if(!seenCharacters.add(ch)) {
+		Set<Character> seenCharacters = new HashSet();
+		for (char ch : str.toCharArray()) {
+			if (!seenCharacters.add(ch)) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
-	//Find allsubString 
-    public static List<String> findAllSubstrings(String str) {
-        List<String> substrings = new ArrayList<>();   
-        // Loop to generate all possible substrings
-        for (int i = 0; i < str.length(); i++) {
-            for (int j = i + 1; j <= str.length(); j++) {
-                substrings.add(str.substring(i, j));
-            }
-        }
-        
-        return substrings;
-    }
-    
-    
-    //1512. Number of Good Pairs
+
+	// Find allsubString
+	public static List<String> findAllSubstrings(String str) {
+		List<String> substrings = new ArrayList<>();
+		// Loop to generate all possible substrings
+		for (int i = 0; i < str.length(); i++) {
+			for (int j = i + 1; j <= str.length(); j++) {
+				substrings.add(str.substring(i, j));
+			}
+		}
+
+		return substrings;
+	}
+
+	// 1512. Number of Good Pairs
 	public static int numIdenticalPairs(int[] nums) {
-		
+
 		int count = 0;
-        Map<Integer, Integer> freq = new HashMap<>();
+		Map<Integer, Integer> freq = new HashMap<>();
 
-        for (int num : nums) {
-            if (freq.containsKey(num)) {
-                count += freq.get(num);
-                freq.put(num, freq.get(num) + 1);
-            } else {
-                freq.put(num, 1);
-            }
-        }
+		for (int num : nums) {
+			if (freq.containsKey(num)) {
+				count += freq.get(num);
+				freq.put(num, freq.get(num) + 1);
+			} else {
+				freq.put(num, 1);
+			}
+		}
 
-        return count;
+		return count;
+	}
+
+	// 5. Longest Palindromic Substring
+	public static String longestPalindrome(String s) {
+		// Steps-->
+		// 1.Find the substring
+		List<String> listSubStrings = Solutions.findAllSubstrings(s);
+
+		// 2.Find List of String Palindrome
+		List<String> listPList = new ArrayList<String>();
+		for (String str : listSubStrings) {
+			if (isPalindrome(str)) {
+				listPList.add(str);
+			}
+
+		}
+
+		// 3. find length of each Palindrome String and store it into Map
+		Map<String, Integer> map = new HashMap<String, Integer>();
+
+		for (String str : listPList) {
+			map.put(str, str.length());
+		}
+
+		//Find max length of String
+		String maxLengthString = null;
+		int maxLength = Integer.MIN_VALUE;
+		for (Map.Entry<String, Integer> entry : map.entrySet()) {
+			if (entry.getValue() > maxLength) {
+				maxLength = entry.getValue();
+				maxLengthString = entry.getKey();
+			}
+		}
+
+		return maxLengthString;
+
+	}
+
+	// palindrome String
+	public static boolean isPalindrome(String str) {
+		String cleanedStr = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+		int left = 0;
+		int right = cleanedStr.length() - 1;
+		while (left < right) {
+			if (cleanedStr.charAt(left) != cleanedStr.charAt(right)) {
+				return false;
+			}
+			left++;
+			right--;
+		}
+		return true;
 	}
 
 }
