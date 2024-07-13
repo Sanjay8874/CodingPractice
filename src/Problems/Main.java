@@ -40,7 +40,7 @@ public class Main {
 		//System.out.println(p1.firstNonRepeatedChar(string));
 		
 		List<Integer> list = Arrays.asList(10,1,11,1,2,3,4,5,5);
-		System.out.println(p1.removeDuplicate1(list));
+		//System.out.println(p1.removeDuplicate1(list));
 		
 		
 		int[] array1 = {0, 1, 1, 2, 3, 5, 6, 0, 0, 1};
@@ -70,7 +70,12 @@ public class Main {
 		//System.out.println(p1.secondLarge(arr12));
 		
 		String str22 = "heloo";
-		System.out.println(p1.reverseString(str22));
+		//System.out.println(p1.reverseString(str22));
+		
+		
+		
+		List<Integer> l1 = Arrays.asList(1,0,1,0,1,0);
+		System.out.println(p1.makeAllZeroFirst(l1));
 	}
 	
 	

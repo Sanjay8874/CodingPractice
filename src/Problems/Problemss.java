@@ -1,11 +1,9 @@
 package Problems;
 
-import java.lang.annotation.Retention;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +12,6 @@ import java.util.Stack;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 
-import javax.sql.rowset.JoinRowSet;
 
 public class Problemss {
 
@@ -311,7 +308,27 @@ public class Problemss {
 		return reverseBuilder.toString();
 	}
 
-
-
+	
+	// Given List{0,1,0,1,0,1}, output-> 000111,  all 0 comes to first place
+	public static String makeAllZeroFirst(List<Integer> list) {
+		
+		StringBuilder str1 = new StringBuilder();
+		for(int num: list) {
+			
+			if(num==0) {
+			str1.insert(0, num);
+			}
+			else {
+				{
+					
+					str1.append(num);
+				}
+			}
+		}
+		
+		return str1.toString();	
+		}
+	
+	
 
 }
