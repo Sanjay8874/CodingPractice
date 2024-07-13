@@ -236,7 +236,7 @@ public class Solutions {
 			map.put(str, str.length());
 		}
 
-		//Find max length of String
+		// Find max length of String
 		String maxLengthString = null;
 		int maxLength = Integer.MIN_VALUE;
 		for (Map.Entry<String, Integer> entry : map.entrySet()) {
@@ -265,25 +265,39 @@ public class Solutions {
 		return true;
 	}
 
-	
-	//9. Palindrome Number
-	
+	// 9. Palindrome Number
+
 	public static boolean isPalindrome(Integer x) {
-		
+
 		String xString = x.toString();
-		
+
 		StringBuilder stringBuilder = new StringBuilder(xString);
-		
-		if(stringBuilder==stringBuilder.reverse()) {
-			return true;   
-		}
-		else {
+
+		if (stringBuilder == stringBuilder.reverse()) {
+			return true;
+		} else {
 			return false;
 		}
-		
+
 	}
-	
-	
-	//7. Reverse Integer
-	
+
+	// 771. Jewels and Stones
+	public static int numJewelsInStones(String jewels, String stones) {
+		int count = 0;
+		Set<Character> set1 = new HashSet<Character>();
+
+		for (char c : jewels.toCharArray()) {
+			set1.add(c);
+		}
+
+		for (char s : stones.toCharArray()) {
+			if (set1.contains(s)) {
+				count++;
+			}
+		}
+
+		return count;
+
+	}
+
 }

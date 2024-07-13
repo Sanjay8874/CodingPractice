@@ -37,7 +37,11 @@ public class LeetCodemain {
 		//System.out.println(Solutions.longestPalindrome(s2));
 		
 		Integer i1 = -1214;
-		System.out.println(Solutions.isPalindrome(i1));
+		//System.out.println(Solutions.isPalindrome(i1));
+		
+		String jewels = "aA";
+		String stones = "aAAbbbb";
+		System.out.println(Solutions.numJewelsInStones(jewels, stones));
 		
 	
 	}
