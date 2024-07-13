@@ -34,7 +34,10 @@ public class LeetCodemain {
 		
 		
 		String s2 = "cbbd";
-		System.out.println(Solutions.longestPalindrome(s2));
+		//System.out.println(Solutions.longestPalindrome(s2));
+		
+		Integer i1 = -1214;
+		System.out.println(Solutions.isPalindrome(i1));
 		
 	
 	}

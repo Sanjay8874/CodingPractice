@@ -265,4 +265,25 @@ public class Solutions {
 		return true;
 	}
 
+	
+	//9. Palindrome Number
+	
+	public static boolean isPalindrome(Integer x) {
+		
+		String xString = x.toString();
+		
+		StringBuilder stringBuilder = new StringBuilder(xString);
+		
+		if(stringBuilder==stringBuilder.reverse()) {
+			return true;   
+		}
+		else {
+			return false;
+		}
+		
+	}
+	
+	
+	//7. Reverse Integer
+	
 }
