@@ -299,5 +299,24 @@ public class Solutions {
 		return count;
 
 	}
+	
+	
+	//2942. Find Words Containing Character
+	 public static List<Integer> findWordsContaining(String[] words, char x) {
+	        List<Integer> list = new ArrayList<Integer>();
+	        
+	        int length = words.length;
+	        for(int i=0;i<length;i++) {
+	        	for(char y: words[i].toCharArray()) {
+	        		
+	        		if(y==x) {
+	        			list.add(i);
+	        			break;
+	        		}
+	        	}
+	        }
+	        return list;
+	    }
+	
 
 }

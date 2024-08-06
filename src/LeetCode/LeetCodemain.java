@@ -41,7 +41,12 @@ public class LeetCodemain {
 		
 		String jewels = "aA";
 		String stones = "aAAbbbb";
-		System.out.println(Solutions.numJewelsInStones(jewels, stones));
+		//System.out.println(Solutions.numJewelsInStones(jewels, stones));
+		
+		
+		String[] words = {"leet","code"}; 
+		char x = 'e';	
+		System.out.println(Solutions.findWordsContaining(words, x));
 		
 	
 	}
